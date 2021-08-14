@@ -32,7 +32,7 @@ var country:String="in"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        pgbar.visibility=View.VISIBLE
       rvhome.layoutManager=LinearLayoutManager(requireContext())
         adapter= NewsAdapter(requireContext(),newslist)
         rvhome.adapter=adapter
@@ -42,6 +42,7 @@ var country:String="in"
             override fun onResponse(call: Call<News>, response: Response<News>) {
 
                 if(response.isSuccessful){
+                    pgbar.visibility=View.GONE
                     response.body()?.let { newslist.addAll(it?.articles) }
                     adapter.notifyDataSetChanged()
                 }

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="275dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+       android:id="@+id/cardview"
+        android:padding="10dp"
+        android:layout_margin="2dp"
+        app:cardCornerRadius="10dp"
+        android:elevation="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/mainheading"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:padding="5dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/black"
+                android:text="Main Heading"
+                android:textStyle="bold"
+                android:textSize="20sp">
+
+            </TextView>
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="130dp"
+         android:layout_marginTop="10dp"
+         android:orientation="horizontal">
+
+         <TextView
+             android:id="@+id/maincontent"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_weight="1"
+             android:padding="5dp"
+             android:maxLines="6"
+              android:ellipsize="end"
+             android:textSize="15sp"
+             android:text="News Content">
+
+         </TextView>
+ <ImageView
+     android:id="@+id/mainimg"
+     android:src="@drawable/ic_baseline_share_24"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:padding="5dp"
+     android:scaleType="centerCrop"
+     android:layout_weight="1">
+ </ImageView>
+
+
+     </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp">
+            <TextView
+                android:id="@+id/mauthor"
+                android:text="Micky"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+            </TextView>
+
+                <ImageButton
+                    android:id="@+id/sharebtn"
+                    android:background="@color/white"
+                    android:src="@drawable/ic_baseline_share_24"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginRight="6dp" />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/mpublishtime"
+                android:padding="5dp"
+                android:text="PublishTime"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

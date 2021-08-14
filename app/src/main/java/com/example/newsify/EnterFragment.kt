@@ -31,6 +31,7 @@ class EnterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        pgbarenter.visibility=View.VISIBLE
         rventer.layoutManager=LinearLayoutManager(requireContext())
         adapter= NewsAdapter(requireContext(),newslist)
         rventer.adapter=adapter
@@ -40,6 +41,7 @@ class EnterFragment : Fragment() {
             override fun onResponse(call: Call<News>, response: Response<News>) {
 
                 if(response.isSuccessful){
+                    pgbarenter.visibility=View.GONE
                     response.body()?.let { newslist.addAll(it?.articles) }
                     adapter.notifyDataSetChanged()
                 }

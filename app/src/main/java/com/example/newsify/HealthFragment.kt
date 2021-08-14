@@ -30,6 +30,7 @@ class HealthFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        pgbarhealth.visibility=View.VISIBLE
         rvhealth.layoutManager=LinearLayoutManager(requireContext())
         adapter= NewsAdapter(requireContext(),newslist)
         rvhealth.adapter=adapter
@@ -39,6 +40,7 @@ class HealthFragment : Fragment() {
             override fun onResponse(call: Call<News>, response: Response<News>) {
 
                 if(response.isSuccessful){
+                    pgbarhealth.visibility=View.GONE
                     response.body()?.let { newslist.addAll(it?.articles) }
                     adapter.notifyDataSetChanged()
                 }

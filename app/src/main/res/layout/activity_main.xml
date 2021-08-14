@@ -9,7 +9,8 @@
         android:id="@+id/toolbar"
         app:titleTextColor="@color/red"
         app:title="NewsiFy"
-        android:backgroundTint="@color/white"
+        app:titleCentered="true"
+        android:backgroundTint="#FFFFFF"
         android:background="?attr/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

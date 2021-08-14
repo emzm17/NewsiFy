@@ -29,6 +29,7 @@ class TechFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        pgbartech.visibility=View.GONE
         rvtech.layoutManager=LinearLayoutManager(requireContext())
         adapter= NewsAdapter(requireContext(),newslist)
         rvtech.adapter=adapter
@@ -38,6 +39,7 @@ class TechFragment : Fragment() {
             override fun onResponse(call: Call<News>, response: Response<News>) {
 
                 if(response.isSuccessful){
+                    pgbartech.visibility=View.GONE
                     response.body()?.let { newslist.addAll(it?.articles) }
                     adapter.notifyDataSetChanged()
                 }

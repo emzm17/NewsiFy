@@ -12,6 +12,7 @@ import com.example.newsify.modal.Articles
 import com.example.newsify.modal.News
 import com.example.newsify.utils.Client
 import kotlinx.android.synthetic.main.fragment_enter.*
+import kotlinx.android.synthetic.main.fragment_health.*
 import kotlinx.android.synthetic.main.fragment_science.*
 import kotlinx.android.synthetic.main.fragment_sport.*
 import retrofit2.Call
@@ -29,6 +30,7 @@ class ScienceFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        pgbarscience.visibility=View.VISIBLE
         rvscience.layoutManager=LinearLayoutManager(requireContext())
         adapter= NewsAdapter(requireContext(),newslist)
         rvscience.adapter=adapter
@@ -38,6 +40,7 @@ class ScienceFragment : Fragment() {
             override fun onResponse(call: Call<News>, response: Response<News>) {
 
                 if(response.isSuccessful){
+                    pgbarscience.visibility=View.GONE
                     response.body()?.let { newslist.addAll(it?.articles) }
                     adapter.notifyDataSetChanged()
                 }
