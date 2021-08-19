@@ -63,7 +63,8 @@ class NewsViewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(it: Articles)= with(itemView) {
         mainheading.text = it.title
         if(it.description==null){
-            maincontent.text="Can't Display the Content Please had over to Website"
+            val text:String="Please had over to the Website"
+            maincontent.text=text
         }
         else{
             maincontent.text=it.description
@@ -75,9 +76,9 @@ class NewsViewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         else{
             mauthor.text=it.author
         }
-        val imageurl = it.urlToImage
-        Glide.with(context).load(imageurl).into(mainimg)
-        val dateTime: ZonedDateTime = ZonedDateTime.parse(it.publishedAt)
+            val imageurl = it.urlToImage
+            Glide.with(context).load(imageurl).into(mainimg)
+            val dateTime: ZonedDateTime = ZonedDateTime.parse(it.publishedAt)
         val res = dateTime.withZoneSameInstant(ZoneId.of("Asia/Kolkata")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm a"))
         mpublishtime.text=res
     }

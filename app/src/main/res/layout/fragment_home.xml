@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".HomeFragment">
 
     <ProgressBar
@@ -12,9 +13,10 @@
         android:layout_height="wrap_content"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        tools:listitem="@layout/items"
         android:id="@+id/rvhome"
-        android:layout_margin="2dp"
-        android:padding="2dp"
+        android:layout_margin="3dp"
+        android:padding="3dp"
         android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
